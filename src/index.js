@@ -1,4 +1,5 @@
 const fs = require('fs');
+const path = require('path');
 
 function type(data) {
     if (Array.isArray(data)) return 'array';
@@ -53,6 +54,6 @@ const schema = JSON.stringify({
     $schema: 'http://json-schema.org/draft-07/schema#', ...parse(data)
 }, null, 4);
 
-fs.writeFile('.schema.json', schema, 'utf8', (err) => {
+fs.writeFile(path.basename(file, path.extname(file)) + '-schema.json', schema, 'utf8', (err) => {
     console.log(err ? 'SchemaGen:: Unable to write file' : 'SchemaGen:: JSON Schema creation success');
 });

@@ -1,6 +1,6 @@
 {
   "name": "explicit-json",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "JSON Schema Generator | Create a barebones JSON Schema Draft 7",
   "main": "index.js",
   "scripts": {

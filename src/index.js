@@ -36,7 +36,7 @@ function parse(data) {
 const file = process.argv[2];
 
 if (!fs.existsSync(file)) {
-    console.log('SchemaGen:: Provided file does not exist');
+    console.log('ExplicitJSON:: Provided file does not exist');
     return;
 }
 
@@ -46,7 +46,7 @@ try {
     data = require(file);
 }
 catch(err) {
-    console.info('SchemaGen:: JSON file is malformed');
+    console.info('ExplicitJSON:: JSON file is malformed');
     return;
 }
 
@@ -55,5 +55,5 @@ const schema = JSON.stringify({
 }, null, 4);
 
 fs.writeFile(path.basename(file, path.extname(file)) + '-schema.json', schema, 'utf8', (err) => {
-    console.log(err ? 'SchemaGen:: Unable to write file' : 'SchemaGen:: JSON Schema creation success');
+    console.log(err ? 'ExplicitJSON:: Unable to write file' : 'ExplicitJSON:: JSON Schema creation success');
 });

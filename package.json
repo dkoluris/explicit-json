@@ -1,13 +1,13 @@
 {
   "name": "explicit-json",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "JSON Schema Generator | Create a barebones JSON Schema Draft 7",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "explicitjson": "src/index.js"
+    "explicitjson": "index.js"
   },
   "repository": {
     "type": "git",

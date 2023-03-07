@@ -1,5 +1,5 @@
 {
-  "name": "schemagen",
+  "name": "jsonschemagen",
   "version": "1.0.0",
   "description": "JSON Schema Generator | Create a barebones JSON Schema Draft 7",
   "main": "index.js",
@@ -8,17 +8,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://dkoluris@github.com/dkoluris/schemagen.git"
+    "url": "git+https://dkoluris@github.com/dkoluris/jsonschemagen.git"
   },
   "keywords": [
     "json",
     "schema",
-    "generator"
+    "generator",
+    "draft"
   ],
   "author": "Dennis Koluris",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/dkoluris/schemagen/issues"
+    "url": "https://github.com/dkoluris/jsonschemagen/issues"
   },
-  "homepage": "https://github.com/dkoluris/schemagen#readme"
+  "homepage": "https://github.com/dkoluris/jsonschemagen#readme"
 }

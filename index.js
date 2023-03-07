@@ -26,7 +26,7 @@ function parse(data) {
             break;
 
         case 'array':
-            if (data[0]) {
+            if (data.length > 0) {
                 schema.items = parse(data[0]);
             }
             break;

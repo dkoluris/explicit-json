@@ -1,28 +1,28 @@
 {
-  "name": "explicit-json",
-  "version": "1.0.4",
-  "description": "JSON Schema Generator | Create a barebones JSON Schema Draft 7",
-  "main": "index.js",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
-  },
-  "bin": {
-    "explicitjson": "./index.js"
-  },
-  "repository": {
-    "type": "git",
-    "url": "git+https://dkoluris@github.com/dkoluris/explicit-json.git"
-  },
-  "keywords": [
-    "json",
-    "schema",
-    "generator",
-    "draft"
-  ],
-  "author": "Dennis Koluris",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/dkoluris/explicit-json/issues"
-  },
-  "homepage": "https://github.com/dkoluris/explicit-json#readme"
+    "name": "explicit-json",
+    "version": "1.0.5",
+    "description": "JSON Schema Generator | Create a barebones JSON Schema Draft 7",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "bin": {
+        "explicitjson": "./index.js"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+https://dkoluris@github.com/dkoluris/explicit-json.git"
+    },
+    "keywords": [
+        "json",
+        "schema",
+        "generator",
+        "draft"
+    ],
+    "author": "Dennis Koluris",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/dkoluris/explicit-json/issues"
+    },
+    "homepage": "https://github.com/dkoluris/explicit-json#readme"
 }

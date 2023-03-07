@@ -1,10 +1,31 @@
 const fs = require('fs');
 const path = require('path');
 
-function type(data) {
-    if (Array.isArray(data)) return 'array';
-    if (Number.isInteger(data)) return 'integer';
-    return typeof data;
+function explicitjson() {
+    const file = process.argv[2];
+
+    if (!fs.existsSync(file)) {
+        console.log('ExplicitJSON:: Provided file does not exist');
+        return;
+    }
+
+    let data;
+
+    try {
+        data = require(file);
+    }
+    catch(err) {
+        console.info('ExplicitJSON:: JSON file is malformed');
+        return;
+    }
+
+    const schema = JSON.stringify({
+        $schema: 'http://json-schema.org/draft-07/schema#', ...parse(data)
+    }, null, 4);
+
+    fs.writeFile(path.basename(file, path.extname(file)) + '-schema.json', schema, 'utf8', (err) => {
+        console.log(err ? 'ExplicitJSON:: Unable to write file' : 'ExplicitJSON:: JSON Schema creation success');
+    });
 }
 
 function parse(data) {
@@ -33,27 +54,10 @@ function parse(data) {
     return schema;
 }
 
-const file = process.argv[2];
-
-if (!fs.existsSync(file)) {
-    console.log('ExplicitJSON:: Provided file does not exist');
-    return;
+function type(data) {
+    if (Array.isArray(data)) return 'array';
+    if (Number.isInteger(data)) return 'integer';
+    return typeof data;
 }
 
-let data;
-
-try {
-    data = require(file);
-}
-catch(err) {
-    console.info('ExplicitJSON:: JSON file is malformed');
-    return;
-}
-
-const schema = JSON.stringify({
-    $schema: 'http://json-schema.org/draft-07/schema#', ...parse(data)
-}, null, 4);
-
-fs.writeFile(path.basename(file, path.extname(file)) + '-schema.json', schema, 'utf8', (err) => {
-    console.log(err ? 'ExplicitJSON:: Unable to write file' : 'ExplicitJSON:: JSON Schema creation success');
-});
+module.exports = explicitjson;
